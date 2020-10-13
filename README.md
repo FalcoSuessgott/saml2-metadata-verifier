@@ -1,11 +1,5 @@
 # SAML2 SP & IDP Metadata verifier
 
-## Installation
-```bash
-git clone https://github.com/FalcoSuessgott/saml2-metadata-verifier.git
-make
-```
-
 ## Dependencies
 * libxml2 
 
@@ -16,6 +10,12 @@ cd ./libxml2*
 ./configure --prefix=/usr  --enable-static --with-threads --with-history
 make
 sudo make install
+```
+
+## Installation
+```bash
+git clone https://github.com/FalcoSuessgott/saml2-metadata-verifier.git
+make
 ```
 
 ## Usage
