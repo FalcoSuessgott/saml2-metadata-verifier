@@ -1,5 +1,5 @@
 Name:		saml2-metadata-verifier
-Version:	1.4
+Version:	1.5
 Release:	1%{?dist}
 Summary:	Verifies saml2 sp and idp metadata
 
@@ -41,6 +41,18 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Wed Oct 14 2020 Tom Morelly <tom-morelly@gmx.de> 1.5-1
+- build badge (tom-morelly@gmx.de)
+- tests (tom-morelly@gmx.de)
+- clean up (tom-morelly@gmx.de)
+- install deps (tom-morelly@gmx.de)
+- install xmllib2 (tom-morelly@gmx.de)
+- use centos7 (tom-morelly@gmx.de)
+- install xmllib2 (tom-morelly@gmx.de)
+- internal cmd (tom-morelly@gmx.de)
+- sudo cmd (tom-morelly@gmx.de)
+- add tests (tom-morelly@gmx.de)
+
 * Wed Oct 14 2020 Tom Morelly <tom-morelly@gmx.de> 1.4-1
 - new paths (tom-morelly@gmx.de)
 - improved shell script (tom-morelly@gmx.de)
