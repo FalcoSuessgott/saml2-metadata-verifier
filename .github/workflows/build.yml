@@ -1,4 +1,4 @@
-name: Shell Scripts Unit Testing
+name: build & test & release
 
 on: [push]
 
@@ -14,6 +14,8 @@ jobs:
 
     - name: build source
       run: sudo make
-
+  test:
+    steps: ubuntu-latest
+    needs: [build]
     - name: run tests
       run: ./saml2-metadata-verifier -f test/valid-metadata.xml
