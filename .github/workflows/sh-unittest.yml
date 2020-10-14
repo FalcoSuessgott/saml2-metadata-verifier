@@ -10,7 +10,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: install deps
-      run: sudo apt-get install libxml2
+      run: sudo apt-get install libxml2 libxml2-utils
 
     - name: build source
       run: sudo make
