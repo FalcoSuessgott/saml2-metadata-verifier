@@ -10,7 +10,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: build source
-      run: make
+      run: sudo make
 
     - name: run tests
-      run: ./saml2-metadata-verifier -f test/valid-metadata.xml
+      run: saml2-metadata-verifier -f test/valid-metadata.xml
