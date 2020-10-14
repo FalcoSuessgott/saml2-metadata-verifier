@@ -24,7 +24,7 @@ Verifies saml2 sp and idp metadata
 rm -rf $RPM_BUILD_ROOT
 %{__install} -Dm 755 %{name} ${RPM_BUILD_ROOT}%{_bindir}/%{name}
 %{__install} -Dm 755 xsd/* ${RPM_BUILD_ROOT}%{_sharedstatedir}/xsd/
-%{__install} -Dm 755 saml-2.0-osd/* ${RPM_BUILD_ROOT}%{_sharedstatedir}/saml-2.0-os/
+%{__install} -Dm 755 saml-2.0-os/* ${RPM_BUILD_ROOT}%{_sharedstatedir}/saml-2.0-os/
 %{__install} -Dm 755 xcatalog/* ${RPM_BUILD_ROOT}%{_sharedstatedir}/xcatalog/
 
 
