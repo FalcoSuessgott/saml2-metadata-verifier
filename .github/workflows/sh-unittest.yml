@@ -13,4 +13,4 @@ jobs:
       run: sudo make
 
     - name: run tests
-      run: saml2-metadata-verifier -f test/valid-metadata.xml
+      run: ./saml2-metadata-verifier -f test/valid-metadata.xml
