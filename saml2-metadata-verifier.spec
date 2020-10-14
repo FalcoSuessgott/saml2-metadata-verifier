@@ -1,5 +1,5 @@
 Name:		saml2-metadata-verifier
-Version:	1.1
+Version:	1.4
 Release:	1%{?dist}
 Summary:	Verifies saml2 sp and idp metadata
 
@@ -10,7 +10,7 @@ BuildRoot:      %{_tmppath}/%{name}-root-%(%{__id_u} -n)
 BuildArch:      noarch
 
 BuildRequires:	bash
-Requires:	xmllib2
+Requires:	libxml2-devel >= 2.9.0
 
 %description
 Verifies saml2 sp and idp metadata
@@ -23,8 +23,13 @@ Verifies saml2 sp and idp metadata
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__install} -Dm 755 %{name} ${RPM_BUILD_ROOT}%{_bindir}/%{name}
+
+%{__install} -d -p -m 0755 ${RPM_BUILD_ROOT}%{_sharedstatedir}/xcatalog/
+%{__install} -d -p -m 0755 ${RPM_BUILD_ROOT}%{_sharedstatedir}/xsd/
+%{__install} -d -p -m 0755 ${RPM_BUILD_ROOT}%{_sharedstatedir}/saml-2.0-os/
+
 %{__install} -Dm 755 xsd/* ${RPM_BUILD_ROOT}%{_sharedstatedir}/xsd/
-%{__install} -Dm 755 saml-2.0-osd/* ${RPM_BUILD_ROOT}%{_sharedstatedir}/saml-2.0-os/
+%{__install} -Dm 755 saml-2.0-os/* ${RPM_BUILD_ROOT}%{_sharedstatedir}/saml-2.0-os/
 %{__install} -Dm 755 xcatalog/* ${RPM_BUILD_ROOT}%{_sharedstatedir}/xcatalog/
 
 
@@ -36,6 +41,18 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Wed Oct 14 2020 Tom Morelly <tom-morelly@gmx.de> 1.4-1
+- new paths (tom-morelly@gmx.de)
+- improved shell script (tom-morelly@gmx.de)
+
+* Wed Oct 14 2020 Tom Morelly <tom-morelly@gmx.de> 1.3-1
+- add deps (tom-morelly@gmx.de)
+
+* Wed Oct 14 2020 Tom Morelly <tom-morelly@gmx.de> 1.2-1
+- creating lib dirs (tom-morelly@gmx.de)
+- typo (tom-morelly@gmx.de)
+- added spec file (tom-morelly@gmx.de)
+
 * Wed Oct 14 2020 Tom Morelly <tom-morelly@gmx.de> 1.1-1
 - new package built with tito
 

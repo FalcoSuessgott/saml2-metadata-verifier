@@ -1,4 +1,10 @@
-# SAML2 SP & IDP Metadata verifier
+# SAML2 metadata verifier
+
+![Shell Scripts Unit Testing](https://github.com/FalcoSuessgott/saml2-metadata-verifier/workflows/Shell%20Scripts%20Unit%20Testing/badge.svg)
+
+## How it works
+`saml2-metadata-verifier` parses the provided metadata-xml-file and verifies it to the SAML2.0 xsd-files using `libxml2`. If the metadata file has values or options that are invalid for the SAML2.0 standard it prints out the errors. 
+
 
 ## Dependencies
 * libxml2 
@@ -13,20 +19,24 @@ sudo make install
 ```
 
 ## Installation
+* There is also a rpm available. 
 ```bash
 git clone https://github.com/FalcoSuessgott/saml2-metadata-verifier.git
-make
+sudo make
 ```
 
 ## Usage
 ```bash
-chmod u+x validate-metadata.sh
-cat $METADATA_FILE.xml | ./validate-metadata.sh
+bash saml2-metadata-verifier -h
+Usage: saml2-metadata-verifier [OPTIONS...]
+
+OPTIONS:
+  -f, --file               path to metadata file
 ```
 
 ## Example
 ```bash
-cat sp-metadata.xml | ./validate-metadata.sh -
+./saml2-metadata-verifier -f metadata.xml
 -:77: element ContactPerson: Schemas validity error : Element '{urn:oasis:names:tc:SAML:2.0:metadata}ContactPerson', attribute 'contactType': [facet 'enumeration'] The value 'developer' is not an element of the set {'technical', 'support', 'administrative', 'billing', 'other'}.
 - fails to validate
 ```
