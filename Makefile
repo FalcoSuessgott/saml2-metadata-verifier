@@ -4,7 +4,8 @@ all: /var/lib/saml-2.0-os /var/lib/xsd/xenc-schema.xsd /var/lib/xsd/xml.xsd /var
 	mkdir -p /var/lib/saml-2.0-os
 	wget http://docs.oasis-open.org/security/saml/v2.0/saml-2.0-os.zip
 	unzip -d /var/lib/saml-2.0-os saml-2.0-os.zip *.xsd
-	rm -rf /var/lib/saml-2.0-os.zip saml-2.0-os.zip
+	sed -i -e 's!2001/xml.xsd!2001/03/xml.xsd!g' /var/lib/saml-2.0-os/saml-schema-metadata-2.0.xsd
+	rm -rf saml-2.0-os.zip.*
 
 /var/lib/xcatalog/saml-metadata.xml:
 	mkdir -p /var/lib/xcatalog

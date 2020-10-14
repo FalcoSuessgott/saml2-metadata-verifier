@@ -29,6 +29,7 @@ sudo make
 ```bash
 yum install tito
 git clone https://github.com/FalcoSuessgott/saml2-metadata-verifier.git
+sudo make
 tito build --rpm --test
 yum localinstall /tmp/tito/*.rpm
 ```
