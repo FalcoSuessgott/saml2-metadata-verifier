@@ -9,7 +9,7 @@ OPTIONS=--noout
 verify() {
     [ ! -f "$1" ] && echo "$1 is no a valid file. Exiting" && exit 1
     
-    XML_CATALOG_FILES="./xcatalog/saml-metadata.xml" xmllint --schema saml-2.0-os/saml-schema-metadata-2.0.xsd $OPTIONS "$1"
+    XML_CATALOG_FILES="/var/lib/xcatalog/saml-metadata.xml" xmllint --schema /var/lib/saml-2.0-os/saml-schema-metadata-2.0.xsd $OPTIONS "$1"
 }
 
 usage() {
