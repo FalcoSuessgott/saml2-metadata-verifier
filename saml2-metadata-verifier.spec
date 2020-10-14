@@ -1,5 +1,5 @@
 Name:		saml2-metadata-verifier
-Version:	1.1
+Version:	1.2
 Release:	1%{?dist}
 Summary:	Verifies saml2 sp and idp metadata
 
@@ -41,6 +41,11 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Wed Oct 14 2020 Tom Morelly <tom-morelly@gmx.de> 1.2-1
+- creating lib dirs (tom-morelly@gmx.de)
+- typo (tom-morelly@gmx.de)
+- added spec file (tom-morelly@gmx.de)
+
 * Wed Oct 14 2020 Tom Morelly <tom-morelly@gmx.de> 1.1-1
 - new package built with tito
 
