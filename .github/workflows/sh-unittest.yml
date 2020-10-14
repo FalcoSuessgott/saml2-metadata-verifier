@@ -4,14 +4,14 @@ on: [push]
 
 jobs:
   build:
-    runs-on: centos-latest
+    runs-on: centos:centos7
     steps:
     - name: Checkout
       uses: actions/checkout@v2
 
     - name: install deps
       run: sudo yum install xmllib2-devel
-      
+
     - name: build source
       run: sudo make
 
