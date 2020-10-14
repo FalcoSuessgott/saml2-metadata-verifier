@@ -1,5 +1,5 @@
 Name:		saml2-metadata-verifier
-Version:	1.5
+Version:	1.6
 Release:	1%{?dist}
 Summary:	Verifies saml2 sp and idp metadata
 
@@ -41,6 +41,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Wed Oct 14 2020 Tom Morelly <tom-morelly@gmx.de> 1.6-1
+- 
+
 * Wed Oct 14 2020 Tom Morelly <tom-morelly@gmx.de> 1.5-1
 - build badge (tom-morelly@gmx.de)
 - tests (tom-morelly@gmx.de)
