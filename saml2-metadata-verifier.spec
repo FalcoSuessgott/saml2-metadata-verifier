@@ -10,7 +10,7 @@ BuildRoot:      %{_tmppath}/%{name}-root-%(%{__id_u} -n)
 BuildArch:      noarch
 
 BuildRequires:	bash
-Requires:	xmllib2
+Requires:	libxml2-devel >= 2.9.0
 
 %description
 Verifies saml2 sp and idp metadata
