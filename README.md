@@ -1,6 +1,6 @@
 # SAML2 metadata verifier
 
-![Shell Scripts Unit Testing](https://github.com/FalcoSuessgott/saml2-metadata-verifier/workflows/Shell%20Scripts%20Unit%20Testing/badge.svg)
+![build](https://github.com/FalcoSuessgott/saml2-metadata-verifier/workflows/Shell%20Scripts%20Unit%20Testing/badge.svg)
 
 ## How it works
 `saml2-metadata-verifier` parses the provided metadata-xml-file and verifies it to the SAML2.0 xsd-files using `libxml2`. If the metadata file has values or options that are invalid for the SAML2.0 standard it prints out the errors. 
