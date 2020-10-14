@@ -1,0 +1,16 @@
+name: Shell Scripts Unit Testing
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: build source
+      run: make
+
+    - name: run tests
+      run: ./saml2-metadata-verifier -f test/valid-metadata.xml
