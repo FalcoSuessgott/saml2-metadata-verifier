@@ -4,18 +4,19 @@
 #   Author: Tom Morelly 
 #   20201014
 
-OPTIONS=--noout
+OPTIONS="--noout"
 
 verify() {
     [ ! -f "$1" ] && echo "$1 is no a valid file. Exiting" && exit 1
     
-    XML_CATALOG_FILES="/var/lib/xcatalog/saml-metadata.xml" xmllint --schema /var/lib/saml-2.0-os/saml-schema-metadata-2.0.xsd $OPTIONS "$1"
+    XML_CATALOG_FILES="/var/lib/xcatalog/saml-metadata.xml" xmllint --pretty 1 --schema /var/lib/saml-2.0-os/saml-schema-metadata-2.0.xsd $2 "$1"
 }
 
 usage() {
   printf "%s\n" "Usage: ${0##*/} [OPTIONS...]"
   printf "\n%s\n" "OPTIONS:"
   printf "  %-25s%s\n" "-f, --file" "path to metadata file"
+  printf "  %-25s%s\n" "-v, --verbose" "verbose"
   exit 0 
 }
 
@@ -24,8 +25,11 @@ main() {
     while [ $# -ge 1 ]; do
         case "${1}" in
             -f|--file)
-            verify "$2"
+            verify "$2" $OPTIONS
             exit 0
+            ;;
+            -v|--verbose)
+            OPTIONS="--load-trace"
             ;;
             -h|--help)
             usage
