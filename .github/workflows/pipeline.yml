@@ -14,8 +14,11 @@ jobs:
 
   build:
     name: build
+    needs: linting
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+
       - name: install deps
         run: sudo apt-get install libxml2 libxml2-utils
 
@@ -24,9 +27,12 @@ jobs:
 
   tests:
     name: tests
+    needs: [build, lint]
     runs-on: ubuntu-latest
     
     steps:
+      - uses: actions/checkout@v2
+
       - name: install deps
         run: sudo apt-get install libxml2 libxml2-utils
 
