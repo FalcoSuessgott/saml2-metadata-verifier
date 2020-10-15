@@ -27,7 +27,7 @@ jobs:
 
   tests:
     name: tests
-    needs: [build, lint]
+    needs: [build, linting]
     runs-on: ubuntu-latest
     
     steps:
