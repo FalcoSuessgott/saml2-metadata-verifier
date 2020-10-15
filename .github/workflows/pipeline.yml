@@ -3,26 +3,39 @@ name: pipeline
 on: [push]
 
 jobs:
-  shellcheck:
-    name: Shellcheck
+  linting:
+    name: lint
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Run ShellCheck
-      uses: ludeeus/action-shellcheck@master
+      - uses: actions/checkout@v2
+    
+      - name: Run ShellCheck
+        uses: ludeeus/action-shellcheck@master
 
-    - name: Checkout
-      uses: actions/checkout@v2
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: install deps
+        run: sudo apt-get install libxml2 libxml2-utils
 
-    - name: install deps
-      run: sudo apt-get install libxml2 libxml2-utils
+      - name: build source
+        run: make
 
-    - name: build source
-      run: sudo make
+  tests:
+    name: tests
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: install deps
+        run: sudo apt-get install libxml2 libxml2-utils
 
-    - name: run tests
-      run: ./saml2-metadata-verifier -f test/valid-metadata.xml 
+      - name: build source
+        run: make
 
-    - name: run test
-      run: ./saml2-metadata-verifier -f test/invalid-metadata.xml || true
+      - name: test should pass
+        run: ./saml2-metadata-verifier -f test/valid-metadata.xml 
+  
+      - name: test should fail
+        run: ./saml2-metadata-verifier -f test/invalid-metadata.xml || true
   
