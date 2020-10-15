@@ -28,9 +28,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__install} -d -p -m 0755 ${RPM_BUILD_ROOT}%{_sharedstatedir}/xsd/
 %{__install} -d -p -m 0755 ${RPM_BUILD_ROOT}%{_sharedstatedir}/saml-2.0-os/
 
-%{__install} -Dm 755 /var/lib/xsd/* ${RPM_BUILD_ROOT}%{_sharedstatedir}/xsd/
-%{__install} -Dm 755 /var/lib/saml-2.0-os/* ${RPM_BUILD_ROOT}%{_sharedstatedir}/saml-2.0-os/
-%{__install} -Dm 755 /var/lib/xcatalog/* ${RPM_BUILD_ROOT}%{_sharedstatedir}/xcatalog/
+%{__install} -Dm 755 xsd/* ${RPM_BUILD_ROOT}%{_sharedstatedir}/xsd/
+%{__install} -Dm 755 saml-2.0-os/* ${RPM_BUILD_ROOT}%{_sharedstatedir}/saml-2.0-os/
+%{__install} -Dm 755 xcatalog/* ${RPM_BUILD_ROOT}%{_sharedstatedir}/xcatalog/
 
 
 %files

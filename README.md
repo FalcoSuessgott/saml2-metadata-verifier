@@ -1,12 +1,24 @@
-# SAML2 metadata verifier
+# SAML2 metadata verifier ![build & test & release](https://github.com/FalcoSuessgott/saml2-metadata-verifier/workflows/build%20&%20test%20&%20release/badge.svg)
 
-![build & test & release](https://github.com/FalcoSuessgott/saml2-metadata-verifier/workflows/build%20&%20test%20&%20release/badge.svg)
+Table of Contents
+=================
+
+   * [SAML2 metadata verifier](#saml2-metadata-verifier)
+      * [How it works](#how-it-works)
+      * [Dependencies](#dependencies)
+      * [Installation](#installation)
+         * [from sources](#from-sources)
+         * [via rpm](#via-rpm)
+      * [Usage](#usage)
+      * [Example](#example)
+      * [Credits](#credits)
+
 
 ## How it works
 `saml2-metadata-verifier` parses the provided metadata-xml-file and verifies it to the SAML2.0 xsd-files using `libxml2`. If the metadata file has values or options that are invalid for the SAML2.0 standard it prints out the errors. 
 
-
-## Dependencies
+## Installation
+### Dependencies
 * libxml2 
 
 ```bash
@@ -18,20 +30,18 @@ make
 sudo make install
 ```
 
-## Installation
-
-### from sources
+### build from sources
 ```bash
 git clone https://github.com/FalcoSuessgott/saml2-metadata-verifier.git
 sudo make
 ```
-### via rpm
+### install via rpm
 ```bash
-yum install tito
+yum install tito libxml2-devel
 git clone https://github.com/FalcoSuessgott/saml2-metadata-verifier.git
 sudo make
 tito build --rpm --test
-yum localinstall /tmp/tito/*.rpm
+yum localinstall /tmp/tito/noarch/*.rpm
 ```
 
 ## Usage

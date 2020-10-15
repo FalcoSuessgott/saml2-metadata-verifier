@@ -17,3 +17,4 @@ jobs:
 
     - name: run tests
       run: ./saml2-metadata-verifier -f test/valid-metadata.xml
+  
