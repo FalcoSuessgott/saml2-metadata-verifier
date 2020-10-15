@@ -1,11 +1,16 @@
-name: test
+name: pipeline
 
 on: [push]
 
 jobs:
-  build:
+  shellcheck:
+    name: Shellcheck
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
+    - name: Run ShellCheck
+      uses: ludeeus/action-shellcheck@master
+
     - name: Checkout
       uses: actions/checkout@v2
 
@@ -20,3 +25,4 @@ jobs:
 
     - name: run test
       run: ./saml2-metadata-verifier -f test/invalid-metadata.xml || true
+  
