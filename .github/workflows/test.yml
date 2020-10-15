@@ -1,4 +1,4 @@
-name: build
+name: test
 
 on: [push]
 
@@ -16,5 +16,7 @@ jobs:
       run: sudo make
 
     - name: run tests
-      run: ./saml2-metadata-verifier -f test/valid-metadata.xml
-  
+      run: ./saml2-metadata-verifier -f test/valid-metadata.xml 
+
+    - name: run test
+      run: ./saml2-metadata-verifier -f test/invalid-metadata.xml || true

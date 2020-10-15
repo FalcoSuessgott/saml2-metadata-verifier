@@ -1,4 +1,3 @@
-<md:EntitiesDescriptor ID="ID" Name="string">
 <md:EntityDescriptor entityID="https://sp.example.com/shibboleth"
                      xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -49,55 +48,3 @@
    </md:ContactPerson>
     
 </md:EntityDescriptor>
-
-<md:EntityDescriptor entityID="https://sp.example.com/shibboleth"
-                     xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
-                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                     xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
-                     xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui">
-    
-   <md:SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
-      <md:Extensions>
-         <mdui:UIInfo>
-            <mdui:DisplayName xml:lang="en">GARR Test SP</mdui:DisplayName>
-            <mdui:DisplayName xml:lang="it">GARR SP di Test</mdui:DisplayName>
-            <mdui:Description xml:lang="en">This is a Service Provider useful for testing</mdui:Description>
-            <mdui:Description xml:lang="it">Questo è un Service Provider utile per i test</mdui:Description>
-         </mdui:UIInfo>
-      </md:Extensions>
-    
-      <md:KeyDescriptor>
-         <ds:KeyInfo>
-            <ds:X509Data>
-               <ds:X509Certificate>
-               
-               </ds:X509Certificate>
-            </ds:X509Data>
-         </ds:KeyInfo>
-      </md:KeyDescriptor>
-    
-      <md:AssertionConsumerService
-         Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
-         Location="https://sp.example.com/Shibboleth.sso/SAML2/POST"
-         index="0" />
-   </md:SPSSODescriptor>
-    
-   <md:Organization>
-      <md:OrganizationName xml:lang="en">Consortium GARR</md:OrganizationName>
-      <md:OrganizationName xml:lang="it">Consortium GARR</md:OrganizationName>
-    
-      <md:OrganizationDisplayName xml:lang="en">Consortium GARR
-      </md:OrganizationDisplayName>
-      <md:OrganizationDisplayName xml:lang="it">Consortium GARR</md:OrganizationDisplayName>
-    
-      <md:OrganizationURL xml:lang="en">http://www.garr.it/b/eng
-      </md:OrganizationURL>
-      <md:OrganizationURL xml:lang="it">https://www.garr.it</md:OrganizationURL>
-   </md:Organization>
-    
-   <md:ContactPerson contactType="developer">
-      <md:EmailAddress>mailto:example.technical.contact@garr.it</md:EmailAddress>
-   </md:ContactPerson>
-    
-</md:EntityDescriptor>
-</md:EntitiesDescriptor>
