@@ -13,6 +13,12 @@ jobs:
       - uses: FalcoSuessgott/rpm-tito-action@v1.3.3
         id: rpm 
 
+      - name: print dir
+        run: ls -lRa 
+
+      - name: env
+        run: env
+
       - name: Upload rpms to release
         uses: svenstaro/upload-release-action@v2
         with:
