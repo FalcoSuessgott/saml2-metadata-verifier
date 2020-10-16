@@ -24,10 +24,8 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          with:
-            repo_token: ${{ secrets.GITHUB_TOKEN }}
-            file: ${{ steps.rpm_path.outputs.path }}
-            asset_name: saml2-metadata-verifier
-            tag: ${{ github.ref }}
-            overwrite: true
-            body: "RPM releases by github actions"
+          file: ${{ steps.rpm_path.outputs.path }}
+          asset_name: saml2-metadata-verifier
+          tag: ${{ github.ref }}
+          overwrite: true
+          body: "RPM releases by github actions"
