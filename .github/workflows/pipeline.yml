@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: FalcoSuessgott/rpm-tito-action@v1.0.7
+      - uses: FalcoSuessgott/rpm-tito-action@v1.2.0
 
       - name: Upload the artifacts
         uses: skx/github-action-publish-binaries@master
