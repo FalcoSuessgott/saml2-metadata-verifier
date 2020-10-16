@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: FalcoSuessgott/rpm-tito-action@v1.2.4
+      - uses: FalcoSuessgott/rpm-tito-action@v1.3.1
 
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
