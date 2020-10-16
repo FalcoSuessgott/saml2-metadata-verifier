@@ -10,21 +10,17 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: FalcoSuessgott/rpm-tito-action@v1.2.3
+      - uses: FalcoSuessgott/rpm-tito-action@v1.2.4
 
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
-
-      - name: get rpm path
-        run: |
-          run: echo ::set-output name=path::$(ls /tmp/tito/noarch/*.rpm)
-        id: rpm_path
+        id: rpm 
 
       - name: Upload rpms to release
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: ${{ steps.rpm_path.outputs.path }}
+          file: ${{ steps.rpm.outputs.rpm_path }}
           asset_name: saml2-metadata-verifier
           tag: ${{ github.ref }}
           overwrite: true
