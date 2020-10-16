@@ -12,4 +12,4 @@ jobs:
       
       - uses: FalcoSuessgott/rpm-tito-action@v1.0.1
         with:
-          repo-uri: https://github.com/FalcoSuessgott/saml2-metadata-verifier.git
+          repo-uri: 'https://github.com/FalcoSuessgott/saml2-metadata-verifier.git'
