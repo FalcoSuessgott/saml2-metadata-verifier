@@ -10,14 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: FalcoSuessgott/rpm-tito-action@v1.3.3
+      - uses: FalcoSuessgott/rpm-tito-action@v1.3.4
         id: rpm 
-
-      - name: print dir
-        run: ls -lRa 
-
-      - name: env
-        run: env
 
       - name: Upload rpms to release
         uses: svenstaro/upload-release-action@v2
