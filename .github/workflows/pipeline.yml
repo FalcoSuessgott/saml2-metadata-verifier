@@ -1,6 +1,12 @@
-name: pipeline
+name: release
 
-on: [push]
+on:
+	push:
+	branches:    
+		- main
+	tags:        
+		- v*
+
 
 jobs:
   release:
@@ -8,15 +14,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+			- name: check out repo and branch
       - uses: actions/checkout@v2
 
+			- name: build rpm
       - uses: FalcoSuessgott/rpm-tito-action@v1.3.4
         id: rpm 
 
-      - name: Upload rpms to release
+			- name: Upload rpms to release
         uses: svenstaro/upload-release-action@v2
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
+        	repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: ${{ steps.rpm.outputs.rpm_path }}
           asset_name: ${{ steps.rpm.outputs.rpm_path }}
           tag: ${{ github.ref }}
