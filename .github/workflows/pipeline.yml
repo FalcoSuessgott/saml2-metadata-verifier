@@ -10,18 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: FalcoSuessgott/rpm-tito-action@v1.3.1
+      - uses: FalcoSuessgott/rpm-tito-action@v1.3.2
         id: rpm 
 
-      - uses: actions/upload-artifact@v2
-        with:
-          name: ${{ steps.rpm.outputs.rpm_path }}
-          path: ${{ steps.rpm.outputs.rpm_path }}
-
-      - uses: actions/download-artifact@v2
-        with:
-          name: ${{ steps.rpm.outputs.rpm_path }}
-          
       - name: Upload rpms to release
         uses: svenstaro/upload-release-action@v2
         with:
