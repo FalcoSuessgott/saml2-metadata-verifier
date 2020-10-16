@@ -1,4 +1,4 @@
-# SAML2 metadata verifier ![build & test & release](https://github.com/FalcoSuessgott/saml2-metadata-verifier/workflows/build%20&%20test%20&%20release/badge.svg)
+# SAML2 metadata verifier ![pipeline](https://github.com/FalcoSuessgott/saml2-metadata-verifier/workflows/pipeline/badge.svg)
 
 Table of Contents
 =================
@@ -16,6 +16,10 @@ Table of Contents
 
 ## How it works
 `saml2-metadata-verifier` parses the provided metadata-xml-file and verifies it to the SAML2.0 xsd-files using `libxml2`. If the metadata file has values or options that are invalid for the SAML2.0 standard it prints out the errors. 
+
+## Features
+* once builded - works offline without fetching xsds from the internet using `XMLCATALOG`
+* iterate over `entityID`s if a file has more than one `entityID`, usefull for Service Provider
 
 ## Installation
 ### Dependencies
