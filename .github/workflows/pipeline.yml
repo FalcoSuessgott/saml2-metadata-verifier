@@ -10,6 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - uses: FalcoSuessgott/rpm-tito-action@v1.0.1
+      - uses: FalcoSuessgott/rpm-tito-action@v1.0.2
         with:
           repo-uri: 'https://github.com/FalcoSuessgott/saml2-metadata-verifier.git'
