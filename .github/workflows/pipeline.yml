@@ -10,4 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - uses: FalcoSuessgott/rpm-tito-action@v1.0.5
+      - name: build src
+        run: make
+
+      - uses: FalcoSuessgott/rpm-tito-action@v1.0.6
