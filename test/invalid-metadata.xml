@@ -1,4 +1,4 @@
-<md:EntityDescriptor entityID="https://sp.example.com/shibboleth"
+<md:EntityDescriptor entityID="https://sp.example.com/shibboleth1"
                      xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                      xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
@@ -48,7 +48,7 @@
    </md:ContactPerson>
     
 </md:EntityDescriptor>
-<md:EntityDescriptor entityID="https://sp.example.com/shibboleth"
+<md:EntityDescriptor entityID="https://sp.example.com/shibboleth2"
                      xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                      xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
