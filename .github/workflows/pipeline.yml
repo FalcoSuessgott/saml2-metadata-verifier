@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: FalcoSuessgott/rpm-tito-action@v1.3.2
+      - uses: FalcoSuessgott/rpm-tito-action@v1.3.3
         id: rpm 
 
       - name: Upload rpms to release
