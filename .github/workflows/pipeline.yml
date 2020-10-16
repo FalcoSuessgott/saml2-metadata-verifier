@@ -1,0 +1,58 @@
+name: pipeline
+
+on: [push]
+
+jobs:
+  linting:
+    name: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+    
+      - name: Run ShellCheck
+        uses: ludeeus/action-shellcheck@master
+
+  build:
+    name: build
+    needs: linting
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: install deps
+        run: sudo apt-get install libxml2 libxml2-utils
+
+      - name: build source
+        run: make
+
+  tests:
+    name: tests
+    needs: [build, linting]
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: install deps
+        run: sudo apt-get install libxml2 libxml2-utils
+
+      - name: build source
+        run: make
+
+      - name: test should pass
+        run: ./saml2-metadata-verifier -f test/valid-metadata.xml 
+  
+      - name: test should fail
+        run: ./saml2-metadata-verifier -f test/invalid-metadata.xml || true
+  
+  release:
+    name: release
+    needs: [build, linting, tests]
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - uses: FalcoSuessgott/rpm-tito-action@v1
+        with:
+          repo-uri: https://github.com/FalcoSuessgott/saml2-metadata-verifier.git
