@@ -9,11 +9,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      
-      - name: install deps
-        run: sudo apt-get install libxml2 libxml2-utils
-        
-      - name: build src
-        run: make
 
       - uses: FalcoSuessgott/rpm-tito-action@v1.0.6
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: saml2-metadata-verifer.rpm
+          path: /tmp/tito/noarch/*.rpm
