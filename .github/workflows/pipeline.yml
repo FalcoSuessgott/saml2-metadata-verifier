@@ -10,4 +10,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - uses: FalcoSuessgott/rpm-tito-action@v1.0.3
+      - uses: FalcoSuessgott/rpm-tito-action@v1.0.4
