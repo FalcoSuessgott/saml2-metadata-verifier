@@ -1,47 +1,31 @@
-name: pipeline
+name: release
 
-on: [push]
+on:
+	push:
+	branches:    
+		- main
+	tags:        
+		- v*
+
 
 jobs:
-  linting:
-    name: lint
+  release:
+    name: release
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-    
-      - name: Run ShellCheck
-        uses: ludeeus/action-shellcheck@master
 
-  build:
-    name: build
-    needs: linting
-    runs-on: ubuntu-latest
     steps:
+			- name: check out repo and branch
       - uses: actions/checkout@v2
 
-      - name: install deps
-        run: sudo apt-get install libxml2 libxml2-utils
+			- name: build rpm
+      - uses: FalcoSuessgott/rpm-tito-action@v1.3.4
+        id: rpm 
 
-      - name: build source
-        run: make
-
-  tests:
-    name: tests
-    needs: [build, linting]
-    runs-on: ubuntu-latest
-    
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: install deps
-        run: sudo apt-get install libxml2 libxml2-utils
-
-      - name: build source
-        run: make
-
-      - name: test should pass
-        run: ./saml2-metadata-verifier -f test/valid-metadata.xml 
-  
-      - name: test should fail
-        run: ./saml2-metadata-verifier -f test/invalid-metadata.xml || true
-  
+			- name: Upload rpms to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+        	repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ${{ steps.rpm.outputs.rpm_path }}
+          asset_name: ${{ steps.rpm.outputs.rpm_path }}
+          tag: ${{ github.ref }}
+          body: "RPM releases by github actions"

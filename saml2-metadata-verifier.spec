@@ -7,7 +7,7 @@ License:	MIT
 URL:		https://github.com/FalcoSuessgott/saml2-metadata-verifier
 Source0:        %{name}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-root-%(%{__id_u} -n)
-BuildArch:      noarch
+BuildArch:      x86_64
 
 BuildRequires:	bash
 Requires:	libxml2-devel >= 2.9.0
