@@ -1,5 +1,5 @@
 Name:		saml2-metadata-verifier
-Version:	1.10
+Version:	1.11
 Release:	1%{?dist}
 Summary:	Verifies saml2 sp and idp metadata
 
@@ -41,12 +41,15 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Fri Oct 30 2020 Tom Morelly <tom-morelly@gmx.de> 1.11-1
+- bump
+
 * Wed Oct 14 2020 Tom Morelly <tom-morelly@gmx.de> 1.10-1
 - comment (tom-morelly@gmx.de)
 - fix old referenced xsd bug (tom-morelly@gmx.de)
 
 * Wed Oct 14 2020 Tom Morelly <tom-morelly@gmx.de> 1.9-1
-- 
+- bump
 
 * Wed Oct 14 2020 Tom Morelly <tom-morelly@gmx.de> 1.8-1
 - add verbose feature and fix xml.xsd (tom-morelly@gmx.de)
@@ -55,7 +58,7 @@ rm -rf $RPM_BUILD_ROOT
 - use full paths (tom-morelly@gmx.de)
 
 * Wed Oct 14 2020 Tom Morelly <tom-morelly@gmx.de> 1.6-1
-- 
+- bump
 
 * Wed Oct 14 2020 Tom Morelly <tom-morelly@gmx.de> 1.5-1
 - build badge (tom-morelly@gmx.de)
