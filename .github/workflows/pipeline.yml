@@ -1,8 +1,8 @@
 name: release
 
 on:
-	push:
-	branches:    
+  push:
+    branches:    
 		- main
 	tags:        
 		- v*
@@ -14,14 +14,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-			- name: check out repo and branch
+      - name: check out repo and branch
       - uses: actions/checkout@v2
-
-			- name: build rpm
+      
+      - name: build rpm
       - uses: FalcoSuessgott/rpm-tito-action@v1.3.4
         id: rpm 
-
-			- name: Upload rpms to release
+        
+      - name: Upload rpms to release
         uses: svenstaro/upload-release-action@v2
         with:
         	repo_token: ${{ secrets.GITHUB_TOKEN }}
