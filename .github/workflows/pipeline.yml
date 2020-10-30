@@ -9,10 +9,10 @@ jobs:
 
     steps:
       - name: check out repo and branch
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
       
       - name: build rpm
-      - uses: FalcoSuessgott/rpm-tito-action@v1.3.4
+        uses: FalcoSuessgott/rpm-tito-action@v1.3.4
         id: rpm 
         
       - name: Upload rpms to release
