@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v2
       
       - name: build rpm
-        uses: FalcoSuessgott/rpm-tito-action@v1.3.4
+        uses: FalcoSuessgott/rpm-tito-action@v1.3.5
         id: rpm 
         
       - name: Upload rpms to release
