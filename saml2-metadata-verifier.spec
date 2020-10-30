@@ -1,5 +1,5 @@
 Name:		saml2-metadata-verifier
-Version:	1.11
+Version:	1.12
 Release:	1%{?dist}
 Summary:	Verifies saml2 sp and idp metadata
 
@@ -41,6 +41,55 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Fri Oct 30 2020 Tom Morelly <tom.morelly@gmx.de> 1.12-1
+- fix changelog (tom.morelly@gmx.de)
+- minor fixes (tom-morelly@gmx.de)
+- new path (tom-morelly@gmx.de)
+- debug (tom-morelly@gmx.de)
+- use pwd (tom-morelly@gmx.de)
+- output dir (tom-morelly@gmx.de)
+- upload artifacts (tom-morelly@gmx.de)
+- new token (tom-morelly@gmx.de)
+- new token (tom-morelly@gmx.de)
+- new token (tom-morelly@gmx.de)
+- bump version (tom-morelly@gmx.de)
+- bump version (tom-morelly@gmx.de)
+- bump version (tom-morelly@gmx.de)
+- indenting (tom-morelly@gmx.de)
+- get path (tom-morelly@gmx.de)
+- get path (tom-morelly@gmx.de)
+- indenting (tom-morelly@gmx.de)
+- new release action (tom-morelly@gmx.de)
+- bump version (tom-morelly@gmx.de)
+- bump version (tom-morelly@gmx.de)
+- bump version (tom-morelly@gmx.de)
+- upload rpm (tom-morelly@gmx.de)
+- bump version (tom-morelly@gmx.de)
+- upload rpm (tom-morelly@gmx.de)
+- tadded files (tom-morelly@gmx.de)
+- install deps (tom-morelly@gmx.de)
+- build command (tom-morelly@gmx.de)
+- version bump (tom-morelly@gmx.de)
+- cd into dir (tom-morelly@gmx.de)
+- using env vars (tom-morelly@gmx.de)
+- version bump (tom-morelly@gmx.de)
+- quoting (tom-morelly@gmx.de)
+- tag (tom-morelly@gmx.de)
+- setting tags correct (tom-morelly@gmx.de)
+- remove files (tom-morelly@gmx.de)
+- linting (tom-morelly@gmx.de)
+- rpm release action (tom-morelly@gmx.de)
+- update readme (tom-morelly@gmx.de)
+- fix multiple entityIDs (tom-morelly@gmx.de)
+- fix multiple entityIDs (tom-morelly@gmx.de)
+- typo (tom-morelly@gmx.de)
+- needs (tom-morelly@gmx.de)
+- typo (tom-morelly@gmx.de)
+- typo (tom-morelly@gmx.de)
+- pipeline action (tom-morelly@gmx.de)
+- new release action (tom-morelly@gmx.de)
+- new release action (tom-morelly@gmx.de)
+
 * Fri Oct 30 2020 Tom Morelly <tom-morelly@gmx.de> 1.11-1
 - bump
 
