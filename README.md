@@ -13,7 +13,8 @@ Table of Contents
       * [Installation](#installation)
          * [build from sources](#build-from-sources)
          * [install via rpm](#install-via-rpm)
-      * [Usage](#usage)
+      * [CLI Usage](#cli-usage)
+      * [Usage with Docker](#usage-with-docker)
       * [Example](#example)
       * [Credits](#credits)
 
@@ -58,7 +59,7 @@ git clone https://github.com/FalcoSuessgott/saml2-metadata-verifier.git
 sudo make
 ```
 
-### install via rpm
+### install via rpm 
 ```bash
 yum install tito libxml2-devel
 git clone https://github.com/FalcoSuessgott/saml2-metadata-verifier.git
@@ -67,7 +68,7 @@ tito build --rpm --test
 yum localinstall /tmp/tito/noarch/*.rpm
 ```
 
-## Usage
+## CLI Usage
 ```bash
 saml2-metadata-verifier -h                             
 Usage: saml2-metadata-verifier [OPTIONS...]
@@ -75,6 +76,13 @@ Usage: saml2-metadata-verifier [OPTIONS...]
 OPTIONS:
   -f, --file               path to metadata file
   -v, --verbose            verbos
+```
+
+## Usage with Docker
+```bash
+docker run --rm \
+   -v ${PWD}/metadata.xml:/saml/metadata.xml \
+   gottziehtalles/saml2-metadata-verifier metadata.xml
 ```
 
 ## Example

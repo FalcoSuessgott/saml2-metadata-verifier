@@ -8,25 +8,11 @@
 OPTIONS="--noout"
 
 verify() {
-    # $1 path to file that is verified
-    # $2 xmllint options
-
-    # split metadata file in case it has multiple entityIDs
-    tmp_dir=$(mktemp -d)
-    csplit --prefix="$tmp_dir/metadata_" -sz "$1" '/<md:EntityDescriptor */' '{*}'
-
-    for file in "$tmp_dir"/*; do
-        entityID=$(cat "$file" | grep "entityID" | cut -d= -f2 | tr -d '"')
-        echo "verifying metadata for entityID: $entityID"
-
-        # return exit code
-        cat "$file" | XML_CATALOG_FILES="xcatalog/saml-metadata.xml" xmllint --schema saml-2.0-os/saml-schema-metadata-2.0.xsd "$2" -
-        err=$?
-        echo
-    done
-
-    rm -rf "$tmp_dir"
-    exit $err 
+  # $1 path to file that is verified
+  # $2 xmllint options
+  [[ ! -f $1 ]] && usage
+  XML_CATALOG_FILES="xcatalog/saml-metadata.xml" xmllint --schema saml-2.0-os/saml-schema-metadata-2.0.xsd "$2" $1
+  exit $?
 }
 
 usage() {
@@ -59,6 +45,5 @@ main() {
         shift
     done
 }
-
 
 main "$@"
