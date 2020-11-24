@@ -10,7 +10,7 @@ OPTIONS="--noout"
 verify() {
   # $1 path to file that is verified
   # $2 xmllint options
-
+  [[ ! -f $1 ]] && usage
   XML_CATALOG_FILES="xcatalog/saml-metadata.xml" xmllint --schema saml-2.0-os/saml-schema-metadata-2.0.xsd "$2" $1
   exit $?
 }
@@ -45,6 +45,5 @@ main() {
         shift
     done
 }
-
 
 main "$@"
