@@ -13,7 +13,7 @@ jobs:
 
         - name: tests
           run: | 
-            saml2-metadata-verifier.sh -f test/valid_metadata.xml
-            saml2-metadata-verifier.sh -f test/invalid_metadata.xml || true
+            ./saml2-metadata-verifier.sh -f test/valid_metadata.xml
+            ./saml2-metadata-verifier.sh -f test/invalid_metadata.xml || true
 
 
