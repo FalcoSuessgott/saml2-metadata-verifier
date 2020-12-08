@@ -64,7 +64,8 @@ OPTIONS:
 
 ## Usage with Docker
 ```bash
-docker run --rm -v ${PWD}/metadata.xml:/saml/metadata.xml gottziehtalles/saml2-metadata-verifier metadata.xml # change -v ${PWD}/metadata.xml to your metadata file
+docker run --rm -v ${PWD}/metadata.xml:/saml/metadata.xml gottziehtalles/saml2-metadata-verifier metadata.xml 
+# change -v ${PWD}/metadata.xml to your metadata file
 ```
 
 ## Example
