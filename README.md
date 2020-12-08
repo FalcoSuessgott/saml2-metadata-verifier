@@ -1,4 +1,5 @@
-# SAML2 metadata verifier ![pipeline](https://github.com/FalcoSuessgott/saml2-metadata-verifier/workflows/pipeline/badge.svg)
+# SAML2 metadata verifier ![pipeline](https://github.com/FalcoSuessgott/saml2-metadata-verifier/workflows/pipeline/badge.svg) ![docker](https://img.shields.io/docker/pulls/gottziehtalles/saml2-metadata-verifier)
+> verify SP and IDP metadata 
 
 Table of Contents
 =================
