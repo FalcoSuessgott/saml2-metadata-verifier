@@ -84,13 +84,13 @@ OPTIONS:
 ## Usage with Docker
 ```bash
 docker run --rm \
-   -v ${PWD}/metadata.xml:/saml/metadata.xml \
-   gottziehtalles/saml2-metadata-verifier metadata.xml
+   -v ${PWD}/metadata.xml:/saml/metadata.xml \ 
+   gottziehtalles/saml2-metadata-verifier metadata.xml # change -v ${PWD}/metadata.xml to your metadata file
 ```
 
 ## Example
 ```bash
-./saml2-metadata-verifier -f metadata.xml
+./saml2-metadata-verifier.sh -f test/invalid_metadata.xml
 -:77: element ContactPerson: Schemas validity error : Element '{urn:oasis:names:tc:SAML:2.0:metadata}ContactPerson', attribute 'contactType': [facet 'enumeration'] The value 'developer' is not an element of the set {'technical', 'support', 'administrative', 'billing', 'other'}.
 - fails to validate
 ```

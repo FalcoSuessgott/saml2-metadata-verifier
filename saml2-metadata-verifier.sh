@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 #
 #   verify SAML2 SP and IDP metadata
 #   Author: Tom Morelly 
@@ -7,20 +7,20 @@
 # shellcheck disable=SC2002
 OPTIONS="--noout"
 
-verify() {
-  # $1 path to file that is verified
-  # $2 xmllint options
-  [[ ! -f $1 ]] && usage
-  XML_CATALOG_FILES="xcatalog/saml-metadata.xml" xmllint --schema saml-2.0-os/saml-schema-metadata-2.0.xsd "$2" $1
-  exit $?
-}
-
 usage() {
   printf "%s\n" "Usage: ${0##*/} [OPTIONS...]"
   printf "\n%s\n" "OPTIONS:"
   printf "  %-25s%s\n" "-f, --file" "path to metadata file"
   printf "  %-25s%s\n" "-v, --verbose" "verbose"
   exit 0 
+}
+
+verify() {
+  # $1 path to file that is verified
+  # $2 xmllint options
+  [[ ! -f $1 ]] && echo -e "$1 is not a file.\n" && usage
+  XML_CATALOG_FILES="xcatalog/saml-metadata.xml" xmllint --schema saml-2.0-os/saml-schema-metadata-2.0.xsd "$2" $1
+  exit $?
 }
 
 main() {
