@@ -1,37 +1,30 @@
 # saml2-metadata-verifier 
 > verify SAML SP and IDP  metadata 
 
-![pipeline](https://github.com/FalcoSuessgott/saml2-metadata-verifier/workflows/pipeline/badge.svg) ![docker](https://img.shields.io/docker/pulls/gottziehtalles/saml2-metadata-verifier)
+![CI](https://github.com/FalcoSuessgott/saml2-metadata-verifier/workflows/CI/badge.svg)
+![docker](https://img.shields.io/docker/pulls/gottziehtalles/saml2-metadata-verifier)
 
 Table of Contents
 =================
 
+   * [saml2-metadata-verifier](#saml2-metadata-verifier)
    * [Table of Contents](#table-of-contents)
       * [How it works](#how-it-works)
-      * [Features](#features)
       * [Dependencies](#dependencies)
          * [libxml2 from sources](#libxml2-from-sources)
-         * [libxml2 via rpm](#libxml2-via-rpm)
-         * [libmxl2 via apt](#libmxl2-via-apt)
+         * [CentOS/RHEL](#centosrhel)
+         * [Debian/Ubuntu](#debianubuntu)
       * [Installation](#installation)
-         * [build from sources](#build-from-sources)
-         * [install via rpm](#install-via-rpm)
-      * [CLI Usage](#cli-usage)
+      * [Usage](#usage)
       * [Usage with Docker](#usage-with-docker)
       * [Example](#example)
       * [Credits](#credits)
 
-
 ## How it works
-`saml2-metadata-verifier` parses the provided metadata-xml-file and validates it to the SAML2.0 xsd-files using `libxml2`. If the metadata file has values or options that are invalid for the SAML2.0 standard it prints out the errors. 
-
-## Features
-* once builded - works offline without having to fetch xsd’s from the internet using `XMLCATALOG`
-* can iterate over multiple `entityID` tags in one file
-
+`saml2-metadata-verifier` parses the provided metadata-xml-file and validates it to the SAML2.0 xsd-files using `xmllint`. If the metadata file has values or options that are invalid for the SAML2.0 standard it prints out the errors. 
 
 ## Dependencies
-You will need `libxml2`. You can install the dependency from sources, rpm or apt packages:
+You will need `xmllint`. You can install the dependency from sources, rpm or apt packages:
 
 ###  libxml2 from sources
 ```bash
@@ -43,35 +36,23 @@ make
 sudo make install
 ```
 
-### libxml2 via rpm
+### CentOS/RHEL
 ```
 yum install libxml2-devel
 ```
 
-### libmxl2 via apt
+### Debian/Ubuntu
 ```
-apt-get install libxml2-dev
+apt-get install libxml2-utils
 ```
 
 ## Installation
-You can install `saml2-metadata-verifier` from sources or rpm:
-
-### build from sources
 ```bash
 git clone https://github.com/FalcoSuessgott/saml2-metadata-verifier.git
-sudo make
+make
 ```
 
-### install via rpm 
-```bash
-yum install tito libxml2-devel
-git clone https://github.com/FalcoSuessgott/saml2-metadata-verifier.git
-sudo make
-tito build --rpm --test
-yum localinstall /tmp/tito/noarch/*.rpm
-```
-
-## CLI Usage
+## Usage
 ```bash
 saml2-metadata-verifier -h                             
 Usage: saml2-metadata-verifier [OPTIONS...]
