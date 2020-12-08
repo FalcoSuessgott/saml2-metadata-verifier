@@ -1,0 +1,19 @@
+on: [push, pull_request]
+name: CI
+jobs:
+    test:
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: Checkout Repo
+          uses: actions/checkout@v2
+
+        - name: build
+          run: make
+
+        - name: tests
+          run: | 
+            saml2-metadata-verifier.sh -f test/valid_metadata.xml
+            saml2-metadata-verifier.sh -f test/invalid_metadata.xml || true
+
+
