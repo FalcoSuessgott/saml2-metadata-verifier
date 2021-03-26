@@ -26,7 +26,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: gottziehtalles/saml2-metadata-verifier
+          tags: {{ secrets.DOCKERHUB_USERNAME }}/saml2-metadata-verifier
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
