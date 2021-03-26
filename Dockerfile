@@ -14,5 +14,5 @@ COPY Makefile Makefile
 COPY saml2-metadata-verifier.sh saml2-metadata-verifier.sh
 RUN make 
 
-ENTRYPOINT ["/bin/sh", "saml2-metadata-verifier.sh", "-f"]
+ENTRYPOINT ["/bin/bash", "saml2-metadata-verifier.sh", "-f"]
 CMD ["-h"]

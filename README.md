@@ -2,7 +2,7 @@
 > verify SAML SP and IDP  metadata 
 
 ![CI](https://github.com/FalcoSuessgott/saml2-metadata-verifier/workflows/CI/badge.svg)
-![docker](https://img.shields.io/docker/pulls/gottziehtalles/saml2-metadata-verifier)
+![docker](https://img.shields.io/docker/pulls/falcosuessgott/saml2-metadata-verifier)
 
 Table of Contents
 =================
